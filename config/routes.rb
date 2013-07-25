@@ -1,4 +1,5 @@
 WdiTradr::Application.routes.draw do
+  get 'users/refresh_table' => 'users#refresh_table'
   resources :stocks, :only => [:create]
 
   resources :user_sessions

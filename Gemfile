@@ -43,4 +43,7 @@ gem 'quiet_assets'
 
 gem 'sorcery'
 
-gem 'stock_quote'
+# gem 'stock_quote'
+
+gem 'httparty'
+gem "ystock"
