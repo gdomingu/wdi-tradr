@@ -1,15 +1,10 @@
-%p#notice= notice
+%h1= @user.email
+%h2= "Cash: #{number_to_currency(@user.cash)}"
 
-%p
-  %b Email:
-  = @user.email
-%p
-  %b Crypted password:
-  = @user.crypted_password
-%p
-  %b Salt:
-  = @user.salt
+= form_for Stock.new, :remote => true do |f|
+  = f.text_field :symbol, :placeholder => "symbol"
+  = f.number_field :quantity, :placeholder => "quantity"
+  = f.button "Buy", :type => "submit"
 
-= link_to 'Edit', edit_user_path(@user)
-\|
-= link_to 'Back', users_path
+%table#stocks
+  = render :partial => "stocks_rows"

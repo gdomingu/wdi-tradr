@@ -1,0 +1,11 @@
+%thead
+  %tr
+    %th Symbol
+    %th Quantity
+    %th Starting Price
+%tbody
+  - @stocks.each do |stock|
+    %tr
+      %td= stock.symbol
+      %td= stock.quantity
+      %td= stock.starting_price
