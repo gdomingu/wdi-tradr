@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  // Refresh stocks table with latest data.
   if ($("#stocks").length) {
     var refresh_stocks_table = function(){
       $.ajax({
@@ -27,6 +28,7 @@ $(document).ready(function(){
   };
   setInterval(update_all_graphs, 2000);
 
+  // Request a new graph is generated for a given symbol.
   window.do_graph = function(symbol){
     var graph_request = $.ajax({
       dataType: "script",
@@ -44,6 +46,7 @@ $(document).ready(function(){
     });
   };
 
+  // Handle the click of a checkbox.
   var process_checkbox = function(){
     var clicked_symbol = $(this).val();
 
