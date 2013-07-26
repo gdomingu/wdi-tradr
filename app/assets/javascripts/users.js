@@ -10,6 +10,6 @@ $(document).ready(function(){
 
     // $("#refresh_stocks").on('click', refresh_stocks_table);
 
-    setInterval(refresh_stocks_table, 1000);
+    // setInterval(refresh_stocks_table, 1000);
   }
 });

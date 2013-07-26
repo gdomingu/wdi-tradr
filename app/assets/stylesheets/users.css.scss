@@ -3,3 +3,12 @@
   padding: 10px;
   margin: 10px 0;
 }
+
+#checkboxes{
+  overflow: hidden;
+
+  .company{
+    float: left;
+    margin-right: 15px;
+  }
+}

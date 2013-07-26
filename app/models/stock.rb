@@ -26,4 +26,8 @@ class Stock < ActiveRecord::Base
 
     paid_initially - latest_value_of_shares
   end
+
+  def self.to_companies_array(stocks)
+    stocks.pluck(:symbol).uniq
+  end
 end

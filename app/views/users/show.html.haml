@@ -1,6 +1,9 @@
 %h1= @user.email
 %h2= "Cash: #{number_to_currency(@user.cash)}"
 
+#checkboxes
+  = render :partial => "stocks_checkboxes"
+
 = form_for Stock.new, :remote => true do |f|
   = f.text_field :symbol, :placeholder => "symbol"
   = f.number_field :quantity, :placeholder => "quantity"
