@@ -1,4 +1,4 @@
 - Stock.to_companies_array(@stocks).each do |company|
   .company
-    = check_box_tag :companies, company, false, :id => company
+    = check_box_tag :companies, company, false, :id => company, :class => "company_checkbox"
     = label_tag company, company.upcase

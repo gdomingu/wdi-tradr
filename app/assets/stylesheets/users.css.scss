@@ -12,3 +12,14 @@
     margin-right: 15px;
   }
 }
+
+#graphs{
+  overflow: hidden;
+
+  .stock_graph{
+    height: 125px;
+    width: 350px;
+    float: left;
+    margin-right: 10px;
+  }
+}

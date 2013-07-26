@@ -1,4 +1,6 @@
 WdiTradr::Application.routes.draw do
+  get 'stocks/data/:symbol' => 'users#stock_data_point'
+
   get 'users/refresh_table' => 'users#refresh_table'
   resources :stocks, :only => [:create]
 

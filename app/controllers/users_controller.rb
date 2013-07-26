@@ -5,6 +5,13 @@ class UsersController < ApplicationController
     @stocks = current_user.stocks
   end
 
+  def stock_data_point
+    @stock = Stock.new(:symbol => params[:symbol])
+    @latest_price = @stock.latest_price
+
+    @graph_div_id = "#{@stock.symbol}_graph"
+  end
+
   # GET /users
   # GET /users.json
   def index

@@ -1,0 +1,36 @@
+// First things first: Make a new JS object for the latest data point.
+var data_point = { time: '<%= Time.now %>', price: <%= @latest_price %> };
+
+// 1. If there is already a graph for the given stock:
+if ($("<%= "##{@graph_div_id}" %>").length){
+
+  // Update the tracked graph data with the new data point.
+  window.<%= @graph_div_id %>.push(data_point);
+
+  // Remove the existing graph from the DIV, since we're replacing it.
+  $("<%= "##{@graph_div_id}" %>").empty();
+}
+
+// 2. If there is not yet a graph for the given stock:
+else{
+  // Create a new DIV, with a specific ID, for the graph to be placed into.
+  var graph_div = $("<div>");
+  graph_div.addClass("stock_graph").attr("id", "<%= @graph_div_id %>");
+  graph_div.appendTo("#graphs");
+
+  // Set a global variable to track the graph's data:
+  window.<%= @graph_div_id %> = [data_point];
+}
+
+// Generate a new graph with the data.
+new Morris.Line({
+  element: "<%= @graph_div_id %>",
+  data: window.<%= @graph_div_id %>,
+  xkey: 'time',
+  ykeys: ['price'],
+  labels: ['Price'],
+  ymin: 'auto',
+  ymax: 'auto',
+  parseTime: false,
+  hideHover: 'always'
+});

@@ -4,6 +4,8 @@
 #checkboxes
   = render :partial => "stocks_checkboxes"
 
+#graphs
+
 = form_for Stock.new, :remote => true do |f|
   = f.text_field :symbol, :placeholder => "symbol"
   = f.number_field :quantity, :placeholder => "quantity"
