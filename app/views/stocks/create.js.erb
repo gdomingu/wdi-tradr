@@ -1,3 +1,4 @@
 $("#new_stock :input").val("");
 
-$("#stocks").empty().html("<%= j render :partial => 'users/stocks_rows' %>");
+$("#stocks").empty().append("<%= j render :partial => 'users/stocks_rows' %>");
+$("#checkboxes").empty().append("<%= j render :partial => 'users/stocks_checkboxes' %>");
