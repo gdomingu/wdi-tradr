@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require raphael-2.1.0.min
+//= require morris
 //= require_tree .
