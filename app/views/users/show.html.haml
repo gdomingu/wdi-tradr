@@ -11,7 +11,7 @@
   = f.number_field :quantity, :placeholder => "quantity"
   = f.button "Buy", :type => "submit"
 
-/= button_tag "Refresh", :id => "refresh_stocks"
+= button_tag "Refresh", :id => "refresh_stocks"
 
 %table#stocks
   = render :partial => "stocks_rows"

@@ -8,7 +8,7 @@ $(document).ready(function(){
       });
     };
 
-    // $("#refresh_stocks").on('click', refresh_stocks_table);
+    $("#refresh_stocks").on('click', refresh_stocks_table);
 
     // setInterval(refresh_stocks_table, 1000);
   }
